@@ -1,0 +1,61 @@
+
+if (dataset == "broad") {
+    
+    romance = clade("Nuorese",
+                    "Cagliari",
+                    "Romanian",
+                    "Arumanian",
+                    "Catalan",
+                    "Portuguese", 
+                    "Italian",
+                    "Spanish",
+                    "French", 
+                    "Provencal", 
+                    "Walloon", 
+                    "Ladin", 
+                    "Romansh", 
+                    "Friulian")
+
+    continental = clade("Romanian",
+                        "Arumanian",
+                        "Catalan",
+                        "Portuguese", 
+                        "Italian",
+                        "Spanish",
+                        "French", 
+                        "Provencal", 
+                        "Walloon", 
+                        "Ladin", 
+                        "Romansh", 
+                        "Friulian")
+
+} else if (dataset == "narrow" || dataset == "medium") {
+
+    
+    romance = clade("Nuorese",
+                    "Cagliari",
+                    "Romanian",
+                    "Catalan",
+                    "Portuguese", 
+                    "Italian",
+                    "Spanish",
+                    "French", 
+                    "Provencal", 
+                    "Walloon", 
+                    "Ladin", 
+                    "Romansh", 
+                    "Friulian")
+
+    continental = clade("Romanian",
+                        "Catalan",
+                        "Portuguese",
+                        "Italian",
+                        "Spanish",
+                        "French", 
+                        "Provencal",
+                        "Walloon",
+                        "Ladin",
+                        "Romansh",
+                        "Friulian")
+}
+
