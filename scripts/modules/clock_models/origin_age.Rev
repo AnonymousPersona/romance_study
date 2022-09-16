@@ -1,0 +1,3 @@
+origin_time ~ dnUniform(2.2, 2.6)
+moves.append( mvSlide(origin_time, delta=1.5,  weight=10.0) )
+
