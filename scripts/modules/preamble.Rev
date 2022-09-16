@@ -1,0 +1,47 @@
+###########################################################
+### Load fossil occurrence times / Stratigraphic ranges ###
+###########################################################
+
+if (bd_model == "fbdr") {
+	taxa <- readTaxonData(path + "data/romance_" + dataset + "_taxa_fbdr.tsv")
+} else if (bd_model == "fbd" || bd_model == "uniform") {
+	taxa <- readTaxonData(path + "data/romance_" + dataset + "_taxa_fbd.tsv")
+}
+
+#############################
+### Load character matrix ###
+#############################
+
+data <- readDiscreteCharacterData(path + "data/chang_" + dataset + "_romance.nex")
+
+#################################
+### Character matrix metadata ###
+#################################
+
+n_taxa <- data.size()
+n_sites <- data.nchar()
+n_branches <- 2 * n_taxa - 2
+
+
+#######################
+### Extant sampling ###
+#######################
+
+#glottolog 4.6 78 minus mozarabic and dalmation
+n_lang_romance <- 76.0
+
+rho <- n_taxa / n_lang_romance
+
+###############################################
+### Helper variables for moves and monitors ###
+###############################################
+
+moves    = VectorMoves()
+monitors = VectorMonitors()
+
+
+if (clade_constraints == true) {
+	filename = study_group + "_" + dataset + "_" + parameterization + "_" + bd_model + "_" + time_shift + "_" + char_model + "_" + clock_model + "_cc"
+} else if (clade_constraints == false)  {
+	filename = study_group + "_" + dataset + "_" + parameterization + "_" + bd_model + "_" + time_shift + "_" + char_model + "_" + clock_model
+}
