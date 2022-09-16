@@ -1,0 +1,2 @@
+p_inv ~ dnBeta(1,1)
+moves.append( mvSlide(p_inv) )
